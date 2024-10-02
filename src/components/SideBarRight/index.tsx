@@ -1,60 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
-
-interface SidebarProps {
-  sidebarOpen: boolean;
-  setSidebarOpen: (arg: boolean) => void;
-}
-
-const SidebarRight = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-
-  const trigger = useRef<any>(null);
-  const sidebar = useRef<any>(null);
-
-  const storedSidebarExpanded = localStorage.getItem('sidebar-expanded');
-  const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true'
-  );
-
-  // close on click outside
-  useEffect(() => {
-    const clickHandler = ({ target }: MouseEvent) => {
-      if (!sidebar.current || !trigger.current) return;
-      if (
-        !sidebarOpen ||
-        sidebar.current.contains(target) ||
-        trigger.current.contains(target)
-      )
-        return;
-      setSidebarOpen(false);
-    };
-    document.addEventListener('click', clickHandler);
-    return () => document.removeEventListener('click', clickHandler);
-  });
-
-  // close if the esc key is pressed
-  useEffect(() => {
-    const keyHandler = ({ keyCode }: KeyboardEvent) => {
-      if (!sidebarOpen || keyCode !== 27) return;
-      setSidebarOpen(false);
-    };
-    document.addEventListener('keydown', keyHandler);
-    return () => document.removeEventListener('keydown', keyHandler);
-  });
-
-  useEffect(() => {
-    localStorage.setItem('sidebar-expanded', sidebarExpanded.toString());
-    if (sidebarExpanded) {
-      document.querySelector('body')?.classList.add('sidebar-expanded');
-    } else {
-      document.querySelector('body')?.classList.remove('sidebar-expanded');
-    }
-  }, [sidebarExpanded]);
+const SidebarRight = () => {
 
   return (
     <aside
-      ref={sidebar}
       className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 border-l border-l-slate-200 ${
-        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+        true ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
        <div className="w-72 bg-white dark:bg-boxdark-2 p-5 shadow-md rounded-lg">
@@ -129,34 +78,6 @@ const SidebarRight = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           <span className="font-medium text-sm">Orlando Diggs</span>
         </div>
       </div>
-
-      {/* <div>
-        <h3 className="text-lg font-semibold mb-2">Contacts</h3>
-        <div className="flex items-center">
-          <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-          <span className="font-medium text-sm">Natali Craig</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-          <span className="font-medium text-sm">Drew Cano</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-          <span className="font-medium text-sm">Orlando Diggs</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-          <span className="font-medium text-sm">Andi Lane</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-          <span className="font-medium text-sm">Kate Morrison</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-          <span className="font-medium text-sm">Koray Okumus</span>
-        </div>
-      </div> */}
     </div>
     </aside>
   );

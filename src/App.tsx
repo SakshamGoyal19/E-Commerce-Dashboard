@@ -4,6 +4,7 @@ import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
 import ECommerce from './pages/Dashboard/ECommerce';
 import DefaultLayout from './layout/DefaultLayout';
+import OrderList from './pages/OrderList/OrderList';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -31,6 +32,15 @@ function App() {
             </>
           }
         />
+        <Route
+        path="orders"
+        element={
+          <>
+            <PageTitle title="Order List" />
+            <OrderList />
+          </>
+        }
+      />
       </Routes>
     </DefaultLayout>
   );

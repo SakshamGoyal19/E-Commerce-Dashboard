@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import ClickOutside from '../ClickOutside';
 
-const DropdownMessage = () => {
+const DropdownMessage = ({sidebarRightOpen, setSideBarRightOpen}: any) => {
 
   return (
     <ClickOutside onClick={() => {}} className="relative">
       <li className="relative">
         <Link
+          onClick={() => {setSideBarRightOpen(!sidebarRightOpen)}}
           className="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
           to="#"
         >

@@ -5,33 +5,27 @@ import SidebarRight from '../components/SideBarRight';
 
 const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarRightOpen, setSideBarRightOpen] = useState(true);
 
   return (
     <div className="dark:bg-boxdark-2 dark:text-bodydark">
-      {/* <!-- ===== Page Wrapper Start ===== --> */}
       <div className="flex h-screen overflow-hidden">
-        {/* <!-- ===== Sidebar Start ===== --> */}
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        {/* <!-- ===== Sidebar End ===== --> */}
-
-        {/* <!-- ===== Content Area Start ===== --> */}
         <div className="no-scrollbar relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-          {/* <!-- ===== Header Start ===== --> */}
-          <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-          {/* <!-- ===== Header End ===== --> */}
-
-          {/* <!-- ===== Main Content Start ===== --> */}
+          <Header
+            sidebarRightOpen={sidebarRightOpen}
+            setSideBarRightOpen={setSideBarRightOpen}
+          />
           <main>
-            <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 bg-white dark:bg-boxdark-2">
-              {children}
+            <div className="flex flex-col h-screen mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 bg-white dark:bg-boxdark-2">
+              <div className="flex-grow overflow-y-auto no-scrollbar">
+                {children}
+              </div>
             </div>
           </main>
-          {/* <!-- ===== Main Content End ===== --> */}
         </div>
-        <SidebarRight sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        {/* <!-- ===== Content Area End ===== --> */}
+        {sidebarRightOpen && <SidebarRight />}
       </div>
-      {/* <!-- ===== Page Wrapper End ===== --> */}
     </div>
   );
 };
