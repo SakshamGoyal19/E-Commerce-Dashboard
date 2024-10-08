@@ -42,30 +42,45 @@ const MapOne = () => {
   });
 
   return (
-    <div className="col rounded-xl border border-stroke bg-whiter py-4 px-5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
+    <div className="col rounded-xl border border-stroke bg-whiter py-4 px-7 md:py-5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-7">
       <h4 className="mb-2 text-lg font-semibold text-black dark:text-white">
         Revenue by Location
       </h4>
-      <div id="mapOne" className="mapOne h-50"></div>
-      <div className="flex flex-col gap-y-2">
-        <div className='flex justify-between'>
-          <p className='text-black dark:text-white font-medium'>Direct</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+      <div id="mapOne" className="mapOne h-40"></div>
+      <div className="space-y-2">
+        <div className="flex justify-between items-center">
+          <span className="text-black dark:text-white font-medium">New York</span>
+          <span className="text-black dark:text-white font-medium">72K</span>
         </div>
-        <div className='flex justify-between'>
-          <p className='text-black dark:text-white font-medium'>Affiliate</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+        <div className="h-1 bg-gray-200 rounded-full">
+          <div className="h-1 bg-blue-400 rounded-full w-4/5"></div>
         </div>
-        <div className='flex justify-between'>
-          <p className='text-black dark:text-white font-medium'>Sponsored</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+
+        <div className="flex justify-between items-center">
+          <span className="text-black dark:text-white font-medium">San Francisco</span>
+          <span className="text-black dark:text-white font-medium">39K</span>
         </div>
-        <div className='flex justify-between'>
-          <p className='text-black dark:text-white font-medium'>E-mail</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+        <div className="h-1 bg-gray-200 rounded-full">
+          <div className="h-1 bg-blue-400 rounded-full w-2/5"></div>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <span className="text-black dark:text-white font-medium">Sydney</span>
+          <span className="text-black dark:text-white font-medium">25K</span>
+        </div>
+        <div className="h-1 bg-gray-200 rounded-full">
+          <div className="h-1 bg-blue-400 rounded-full w-1/4"></div>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <span className="text-black dark:text-white font-medium">Singapore</span>
+          <span className="text-black dark:text-white font-medium">61K</span>
+        </div>
+        <div className="h-1 bg-gray-200 rounded-full">
+          <div className="h-1 bg-blue-400 rounded-full w-3/4"></div>
         </div>
       </div>
-    </div>  
+    </div>
   );
 };
 

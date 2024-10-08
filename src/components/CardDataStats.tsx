@@ -16,9 +16,9 @@ const CardDataStats: React.FC<CardDataStatsProps> = ({
   levelDown,
 }) => {
   return (
-    <div className="rounded-xl border border-stroke bg-whiter py-2 px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
+    <div className="rounded-xl border border-stroke bg-whiter py-2 px-5 md:px-7.5 shadow-default dark:border-strokedark dark:bg-boxdark">
 
-      <div className="mt-4 flex items-end justify-between">
+      <div className="my-4 flex items-end justify-between">
         <div>
           <h4 className="text-sm font-bold text-black dark:text-white mb-4">
             {title}

@@ -33,13 +33,13 @@ const brandData: any[] = [
 
 const TableOne = () => {
   return (
-    <div className="rounded-xl border border-stroke bg-whiter px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+    <div className="rounded-xl border border-stroke bg-whiter px-5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <h4 className="mb-4 text-lg font-semibold text-black dark:text-white">
         Top Selling Products
       </h4>
 
       <div className="flex flex-col">
-        <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-4">
+        <div className="grid grid-cols-4 rounded-sm bg-gray-2 dark:bg-meta-4">
           <div className="p-2.5 xl:p-3">
             <h5 className="text-sm font-medium xsm:text-base">
               Name
@@ -55,7 +55,7 @@ const TableOne = () => {
               Quantity
             </h5>
           </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-3">
+          <div className="p-2.5 text-center xl:p-3">
             <h5 className="text-sm font-medium xsm:text-base">
               Amount
             </h5>
@@ -66,7 +66,7 @@ const TableOne = () => {
 
         {brandData.map((brand, key) => (
           <div
-            className={`grid grid-cols-3 sm:grid-cols-4 mb-4${
+            className={`grid grid-cols-4 mb-4${
               key === brandData.length - 1
                 ? ''
                 : 'border-b border-stroke dark:border-strokedark'
@@ -81,11 +81,11 @@ const TableOne = () => {
               <p className="text-meta-3">{brand.price}</p>
             </div>
 
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-3">
+            <div className="flex items-center justify-center p-2.5 xl:p-3">
               <p className="text-black dark:text-white">{brand.quantity}</p>
             </div>
 
-            <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-3">
+            <div className="flex items-center justify-center p-2.5 xl:p-3">
               <p className="text-meta-5">{brand.amount}</p>
             </div>
           </div>

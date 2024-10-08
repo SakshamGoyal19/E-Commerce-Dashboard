@@ -30,7 +30,7 @@ const options: ApexOptions = {
       breakpoint: 1024,
       options: {
         chart: {
-          height: 300,
+          height: 200,
         },
       },
     },
@@ -64,14 +64,7 @@ const options: ApexOptions = {
   },
   xaxis: {
     type: 'category',
-    categories: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun'
-    ],
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
     axisBorder: {
       show: false,
     },
@@ -102,12 +95,12 @@ const LineChart: React.FC = () => {
   const [state, setState] = useState<ChartOneState>({
     series: [
       {
-        name: 'Product One',
+        name: 'Current Week',
         data: [25, 18, 14, 14, 16, 18],
       },
 
       {
-        name: 'Product Two',
+        name: 'Previous Week',
         data: [10, 18, 22, 21, 16, 10],
       },
     ],
@@ -122,23 +115,21 @@ const LineChart: React.FC = () => {
 
   return (
     <div className="col-span-12 rounded-xl border border-stroke bg-whiter px-5 pt-7.5 pb-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-      <div className="flex flex-wrap items-start justify-between gap-3 sm:flex-nowrap">
-        <div className="flex w-full flex-wrap gap-3 sm:gap-5">
-          <div className="flex min-w-47.5">
-            <span className="mt-1 mr-2 flex h-4 w-full max-w-4 items-center justify-center rounded-full border border-primary">
-              <span className="block h-2.5 w-full max-w-2.5 rounded-full bg-primary"></span>
-            </span>
-            <div className="w-full">
-              <p className="font-semibold text-primary">Total Revenue</p>
-            </div>
+      <div className="flex flex-wrap items-start justify-between gap-3 sm:flex-nowrap mb-3">
+        <div className="flex flex-wrap items-center space-x-2 md:space-x-8">
+          <span className="text-lg font-semibold text-black dark:text-white">Revenue</span>
+          <span className="border-l h-6 border-gray-300"></span>
+
+          <div className="flex items-center space-x-2">
+            <span className="text-primary">●</span>
+            <span className="text-medium font-medium text-black dark:text-white">Current Week</span>
+            <span className="font-bold text-gray-800">$58,211</span>
           </div>
-          <div className="flex min-w-47.5">
-            <span className="mt-1 mr-2 flex h-4 w-full max-w-4 items-center justify-center rounded-full border border-secondary">
-              <span className="block h-2.5 w-full max-w-2.5 rounded-full bg-secondary"></span>
-            </span>
-            <div className="w-full">
-              <p className="font-semibold text-secondary">Total Sales</p>
-            </div>
+
+          <div className="flex items-center space-x-2">
+            <span className="text-secondary">●</span>
+            <span className="text-medium font-medium text-black dark:text-white">Previous Week</span>
+            <span className="font-bold text-gray-800">$68,768</span>
           </div>
         </div>
       </div>

@@ -5,14 +5,16 @@ import SidebarRight from '../components/SideBarRight';
 
 const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [sidebarRightOpen, setSideBarRightOpen] = useState(true);
+  const [sidebarRightOpen, setSideBarRightOpen] = useState(false);
 
   return (
     <div className="dark:bg-boxdark-2 dark:text-bodydark">
       <div className="flex h-screen overflow-hidden">
-        <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        {<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />}
         <div className="no-scrollbar relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           <Header
+            sidebarOpen={sidebarOpen}
+            setSidebarOpen={setSidebarOpen}
             sidebarRightOpen={sidebarRightOpen}
             setSideBarRightOpen={setSideBarRightOpen}
           />
@@ -24,7 +26,7 @@ const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
             </div>
           </main>
         </div>
-        {sidebarRightOpen && <SidebarRight />}
+        {sidebarRightOpen && <SidebarRight sidebarRightOpen={sidebarRightOpen} setSidebarRightOpen={setSideBarRightOpen}/>}
       </div>
     </div>
   );

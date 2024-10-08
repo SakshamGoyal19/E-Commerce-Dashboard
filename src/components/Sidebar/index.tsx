@@ -98,7 +98,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="/"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -135,7 +135,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
 
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="/orders"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -160,7 +160,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
 
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="/"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -188,7 +188,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
 
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="/#"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -373,7 +373,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 }}
               </SidebarLinkGroup>
 
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="#"
                   className={
@@ -413,7 +413,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
 
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="#"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -454,7 +454,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
 
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="#"
                   className={
@@ -494,7 +494,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
 
-              <li>
+              <li onClick={() => setSidebarOpen(false)}>
                 <NavLink
                   to="#"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${

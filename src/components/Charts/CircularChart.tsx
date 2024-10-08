@@ -12,7 +12,7 @@ const options: ApexOptions = {
     type: 'donut',
   },
   colors: ['#3C50E0', '#6577F3', '#8FD0EF', '#0FADCF'],
-  labels: ['Desktop', 'Tablet', 'Mobile', 'Unknown'],
+  labels: ['Direct', 'Affiliate', 'Sponcered', 'E-Mail'],
   legend: {
     show: false,
     position: 'bottom',
@@ -42,7 +42,7 @@ const options: ApexOptions = {
       breakpoint: 640,
       options: {
         chart: {
-          width: 100,
+          width: 220,
         },
       },
     },
@@ -63,7 +63,7 @@ const CircularChart: React.FC = () => {
   handleReset;
 
   return (
-    <div className="sm:px-7.5 col-span-12 rounded-xl border border-stroke bg-whiter px-5 pb-7 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
+    <div className="col-span-12 rounded-xl border border-stroke bg-whiter px-7 md:px-5 pb-7 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-5">
       <div className="mb-3 justify-between gap-4 sm:flex">
         <div>
           <h5 className="text-lg font-semibold text-black dark:text-white">
@@ -85,19 +85,19 @@ const CircularChart: React.FC = () => {
       <div className="flex flex-col gap-y-2">
         <div className='flex justify-between'>
           <p className='text-black dark:text-white font-medium'>Direct</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+          <p className='text-black dark:text-white font-medium'>$300</p>
         </div>
         <div className='flex justify-between'>
           <p className='text-black dark:text-white font-medium'>Affiliate</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+          <p className='text-black dark:text-white font-medium'>$400</p>
         </div>
         <div className='flex justify-between'>
           <p className='text-black dark:text-white font-medium'>Sponsored</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+          <p className='text-black dark:text-white font-medium'>$800</p>
         </div>
         <div className='flex justify-between'>
           <p className='text-black dark:text-white font-medium'>E-mail</p>
-          <p className='text-black dark:text-white font-medium'>300</p>
+          <p className='text-black dark:text-white font-medium'>$500</p>
         </div>
       </div>
     </div>

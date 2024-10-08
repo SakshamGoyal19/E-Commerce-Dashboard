@@ -95,7 +95,7 @@ const OrderList: React.FC = () => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-2 md:p-8">
       {/* Title */}
       <h1 className="text-xl font-bold mb-4">Order List</h1>
 
